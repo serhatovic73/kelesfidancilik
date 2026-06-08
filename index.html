@@ -638,25 +638,36 @@ target="_blank">
 <script>
 document.addEventListener("DOMContentLoaded",()=>{
 
-    const elements = document.querySelectorAll(
-        "section, .product-card, .feature-box, .stat-box, footer"
+    const items = document.querySelectorAll(
+        ".product-card, .feature-box, .stat-box, h2"
     );
 
-    elements.forEach(el=>{
-        el.classList.add("animate-item");
-    });
-
     const observer = new IntersectionObserver((entries)=>{
+
         entries.forEach(entry=>{
+
             if(entry.isIntersecting){
-                entry.target.classList.add("show");
+
+                entry.target.classList.add("active");
+
+                observer.unobserve(entry.target);
+
             }
+
         });
+
     },{
         threshold:0.15
     });
 
-    elements.forEach(el=>observer.observe(el));
+    items.forEach(item=>{
+
+        item.classList.add("fade-up");
+
+        observer.observe(item);
+
+    });
+
 });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

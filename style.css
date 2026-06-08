@@ -240,57 +240,40 @@ transform:scale(1.1);
 
 
 
-
-
-/*Animation*/
-
-/* Başlangıç durumu */
-.animate-item{
-    opacity:1;
-    transform:none;
-    transition:all .8s ease;
+.fade-up{
+    opacity:0;
+    transform:translateY(40px);
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
 }
 
-
-/* Görününce */
-.animate-item.show{
+.fade-up.active{
     opacity:1;
     transform:translateY(0);
 }
 
-/* Hero yazı animasyonu */
-.hero-title{
-    animation: heroFade 1.2s ease forwards;
+/* Ürün kartları için gecikme */
+.product-card{
+    transition:
+    transform .35s ease,
+    box-shadow .35s ease;
 }
 
-.hero p,
-.hero .btn{
-    opacity:0;
-    animation: heroFade 1.2s ease forwards;
-    animation-delay:.4s;
+.product-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
 }
 
-@keyframes heroFade{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
 
-/* Kart hover */
-.product-card,
-.feature-box,
-.stat-box{
-    transition:.4s ease;
-}
+/* Stagger Animation */
 
-.product-card:hover,
-.feature-box:hover,
-.stat-box:hover{
-    transform:translateY(-8px);
-}
-
+.product-card:nth-child(1){transition-delay:.1s;}
+.product-card:nth-child(2){transition-delay:.2s;}
+.product-card:nth-child(3){transition-delay:.3s;}
+.product-card:nth-child(4){transition-delay:.4s;}
+.product-card:nth-child(5){transition-delay:.5s;}
+.product-card:nth-child(6){transition-delay:.6s;}
+.product-card:nth-child(7){transition-delay:.7s;}
+.product-card:nth-child(8){transition-delay:.8s;}
+.product-card:nth-child(9){transition-delay:.9s;}
