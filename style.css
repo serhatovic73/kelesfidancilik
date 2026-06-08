@@ -246,10 +246,11 @@ transform:scale(1.1);
 
 /* Başlangıç durumu */
 .animate-item{
-    opacity:0;
-    transform:translateY(40px);
+    opacity:1;
+    transform:none;
     transition:all .8s ease;
 }
+
 
 /* Görününce */
 .animate-item.show{
@@ -293,7 +294,3 @@ transform:scale(1.1);
     transform:translateY(-8px);
 }
 
-.animate-item{
-    opacity:1 !important;
-    transform:none !important;
-}
