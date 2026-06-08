@@ -1,0 +1,294 @@
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#f8faf7;
+color:#222;
+}
+.call-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.btn{
+    background-color: #248d2b;
+    color: white;
+}
+.btn:hover{
+    background-color: #1c5820;
+    color: white;
+}
+.custom-navbar{
+background:#1B5E20;
+}
+.hero-title{
+font-size:clamp(2rem,6vw,5rem);
+line-height:1.1;
+}
+
+.hero{
+min-height:90vh;
+display:flex;
+align-items:center;
+
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("images/home.png");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+/* Mobil */
+
+@media (max-width:576px){
+
+.hero{
+
+min-height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("images/mobilimage.png");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+}
+
+.hero-title{
+
+font-size:2.4rem;
+line-height:1.2;
+
+}
+
+}
+.product-card{
+background:#fff;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+height:100%;
+}
+
+.product-card:hover{
+transform:translateY(-8px);
+}
+
+.product-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.feature-box{
+background:#fff;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.stat-box{
+background:white;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.cta-section{
+background:#1B5E20;
+color:white;
+padding:80px 0;
+}
+
+footer{
+background:#111827;
+color:white;
+}
+
+footer a{
+color:white;
+text-decoration:none;
+}
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+width:65px;
+height:65px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+color:white;
+text-decoration:none;
+z-index:9999;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.whatsapp:hover{
+color:white;
+transform:scale(1.1);
+}
+
+
+
+
+/*Navbar**************************************************/
+/* NAVBAR */
+.custom-navbar{
+    background: rgba(18, 66, 38, 0.92);
+    backdrop-filter: blur(15px);
+    padding: 14px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+/* Logo */
+.navbar-brand{
+    color:#fff;
+    font-size:1.6rem;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    letter-spacing:.5px;
+}
+
+.navbar-brand i{
+    color:#6cff92;
+    font-size:1.8rem;
+}
+
+.navbar-brand:hover{
+    color:#fff;
+}
+
+/* Menü */
+.navbar-nav{
+    gap:12px;
+}
+
+.nav-link{
+    color:rgba(255,255,255,.85)!important;
+    font-weight:500;
+    position:relative;
+    transition:.3s;
+    padding:10px 16px !important;
+}
+
+.nav-link::after{
+    content:'';
+    position:absolute;
+    left:50%;
+    bottom:0;
+    width:0;
+    height:2px;
+    background:#6cff92;
+    transition:.3s;
+    transform:translateX(-50%);
+}
+
+.nav-link:hover{
+    color:#6cff92 !important;
+}
+
+.nav-link:hover::after{
+    width:70%;
+}
+
+/* İletişim Butonu */
+.contact-btn{
+    background:#6cff92;
+    color:#124226;
+    font-weight:600;
+    padding:10px 24px;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.contact-btn:hover{
+    transform:translateY(-2px);
+    background:white;
+    color:#124226;
+}
+
+/* Mobil */
+@media(max-width:991px){
+
+    .navbar-nav{
+        text-align:center;
+        margin:20px 0;
+    }
+
+    .contact-btn{
+        display:block;
+        text-align:center;
+    }
+}
+
+
+
+
+
+
+/*Animation*/
+
+/* Başlangıç durumu */
+.animate-item{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
+
+/* Görününce */
+.animate-item.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Hero yazı animasyonu */
+.hero-title{
+    animation: heroFade 1.2s ease forwards;
+}
+
+.hero p,
+.hero .btn{
+    opacity:0;
+    animation: heroFade 1.2s ease forwards;
+    animation-delay:.4s;
+}
+
+@keyframes heroFade{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Kart hover */
+.product-card,
+.feature-box,
+.stat-box{
+    transition:.4s ease;
+}
+
+.product-card:hover,
+.feature-box:hover,
+.stat-box:hover{
+    transform:translateY(-8px);
+}
